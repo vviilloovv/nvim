@@ -5,3 +5,11 @@ on_event = 'InsertEnter'
 hook_add = '''
   source ~/.config/nvim/plugins/deoplete.vim
 '''
+
+# Ruby用入力補完
+[[plugins]]
+repo = 'osyo-manga/vim-monster'
+on_i = 1
+hook_add = '''
+  source ~/.config/nvim/plugins/vim-monster.vim
+'''
