@@ -1,0 +1,2 @@
+" キーバインド
+nnoremap :tree :NERDTreeToggle

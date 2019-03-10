@@ -1,0 +1,37 @@
+# プラグイン管理
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# ファイルオープンを便利に
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+  source ~/.config/nvim/plugins/denite.vim
+'''
+
+# ファイルをツリー表示
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  source ~/.config/nvim/plugins/nerdtree.vim
+'''
+
+# Ruby向け end自動挿入
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+# インデントに色をつける
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+# 行末の半角スペースを可視化
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# カラースキーム
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+hook_add = '''
+  source ~/.config/nvim/plugins/iceberg.vim
+'''
+
