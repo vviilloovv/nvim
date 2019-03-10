@@ -1,4 +1,5 @@
-set background = dark
-set syntax on
+set background=dark
+set syntax=on
 set termguicolors
-au MyAutoCmd VimEnter * nested colorscheme iceberg
+" au MyAutoCmd VimEnter * nested colorscheme iceberg
+colorscheme iceberg
