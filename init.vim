@@ -44,8 +44,6 @@ highlight Normal ctermbg=NONE guibg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
 highlight SpecialKey ctermbg=NONE guibg=NONE
 highlight EndOfBuffer ctermbg=NONE guibg=NONE
-" カラースキーム用設定
-set termguicolors
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -70,6 +68,17 @@ set wrapscan
 set hls
 " ESC連打でハイライト解除
 nmap <ESC><ESC> :nohls<CR><ESC>
+
+" 操作系
+" Ctrl + hjkl でウィンドウ間を移動
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" /{pattern}の入力中は「/」をタイプすると自動で「\/」が、
+" ?{pattern}の入力中は「?」をタイプすると自動で「\?」が 入力されるようになる
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
 " python3を有効化
 let g:python3_host_prog=$PYENV_ROOT . '/shims/python3'
