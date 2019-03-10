@@ -85,8 +85,12 @@ if dein#load_state('/Users/vviilloovv/.cache/dein')
   " Required:
   call dein#add('/Users/vviilloovv/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-  call dein#load_toml('/Users/vviilloovv/.config/nvim/dein.toml', {'lazy': 0})
-  call dein#load_toml('/Users/vviilloovv/.config/nvim/dein_lazy.toml', {'lazy': 1})
+  " tomlディレクトリ設定
+  let s:toml_dir=expand('~/.config/nvim')
+  " 起動時読み込み
+  call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
+  " 遅延読み込み
+  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
 
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
