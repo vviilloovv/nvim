@@ -78,10 +78,19 @@ nnoremap <C-l> <C-w>l
 " /{pattern}の入力中は「/」をタイプすると自動で「\/」が、
 " ?{pattern}の入力中は「?」をタイプすると自動で「\?」が 入力されるようになる
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
-cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'let
+" マウス操作有効化
+set mouse=a
 
-" python3を有効化
-let g:python3_host_prog=$PYENV_ROOT . '/shims/python3'
+" provider
+" python2
+let g:python_host_prog=$PYENV_ROOT . '/versions/py2nvim/bin/python'
+" python3
+let g:python3_host_prog=$PYENV_ROOT . '/versions/py3nvim/bin/python'
+" ruby
+let g:ruby_host_prog='~/.rbenv/shims/neovim-ruby-host'
+" Node.js
+let g:node_host_prog='~/.nodenv/versions/11.10.1/bin/neovim-node-host'
 
 """"""""""""""""""""""""""""""
 " 挿入モード時、ステータスラインの色を変更
