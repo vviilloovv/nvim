@@ -44,6 +44,8 @@ highlight Normal ctermbg=NONE guibg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
 highlight SpecialKey ctermbg=NONE guibg=NONE
 highlight EndOfBuffer ctermbg=NONE guibg=NONE
+" カラースキーム用設定
+set termguicolors
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
