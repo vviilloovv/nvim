@@ -28,10 +28,3 @@ repo = 'nathanaelkane/vim-indent-guides'
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
-# カラースキーム
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
-hook_post_source = '''
-  source ~/.config/nvim/plugins/iceberg.vim
-'''
-
