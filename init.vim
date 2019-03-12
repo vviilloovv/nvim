@@ -40,10 +40,14 @@ set laststatus=2
 nnoremap j gj
 nnoremap k gk
 " 背景透過
-highlight Normal ctermbg=NONE guibg=NONE
-highlight NonText ctermbg=NONE guibg=NONE
-highlight SpecialKey ctermbg=NONE guibg=NONE
-highlight EndOfBuffer ctermbg=NONE guibg=NONE
+"highlight Normal ctermbg=NONE guibg=NONE
+"highlight NonText ctermbg=NONE guibg=NONE
+"highlight SpecialKey ctermbg=NONE guibg=NONE
+"highlight EndOfBuffer ctermbg=NONE guibg=NONE
+" カラースキーム
+filetype off
+colorscheme iceberg
+set termguicolors
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -95,35 +99,35 @@ let g:node_host_prog='~/.nodenv/versions/11.10.1/bin/neovim-node-host'
 """"""""""""""""""""""""""""""
 " 挿入モード時、ステータスラインの色を変更
 """"""""""""""""""""""""""""""
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-
-if has('syntax')
-  augroup InsertHook
-    autocmd!
-    autocmd InsertEnter * call s:StatusLine('Enter')
-    autocmd InsertLeave * call s:StatusLine('Leave')
-  augroup END
-endif
-
-let s:slhlcmd = ''
-function! s:StatusLine(mode)
-  if a:mode == 'Enter'
-    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-    silent exec g:hi_insert
-  else
-    highlight clear StatusLine
-    silent exec s:slhlcmd
-  endif
-endfunction
-
-function! s:GetHighlight(hi)
-  redir => hl
-  exec 'highlight '.a:hi
-  redir END
-  let hl = substitute(hl, '[\r\n]', '', 'g')
-  let hl = substitute(hl, 'xxx', '', '')
-  return hl
-endfunction
+"let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+"
+"if has('syntax')
+"  augroup InsertHook
+"    autocmd!
+"    autocmd InsertEnter * call s:StatusLine('Enter')
+"    autocmd InsertLeave * call s:StatusLine('Leave')
+"  augroup END
+"endif
+"
+"let s:slhlcmd = ''
+"function! s:StatusLine(mode)
+"  if a:mode == 'Enter'
+"    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+"    silent exec g:hi_insert
+"  else
+"    highlight clear StatusLine
+"    silent exec s:slhlcmd
+"  endif
+"endfunction
+"
+"function! s:GetHighlight(hi)
+"  redir => hl
+"  exec 'highlight '.a:hi
+"  redir END
+"  let hl = substitute(hl, '[\r\n]', '', 'g')
+"  let hl = substitute(hl, 'xxx', '', '')
+"  return hl
+"endfunction
 """"""""""""""""""""""""""""""
 
 " dein Scripts-----------------------------
@@ -145,9 +149,9 @@ if dein#load_state('/Users/vviilloovv/.cache/dein')
   " tomlディレクトリ設定
   let s:toml_dir=expand('~/.config/nvim')
   " 起動時読み込み
-  call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
+  "call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
   " 遅延読み込み
-  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
+  "call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
 
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
